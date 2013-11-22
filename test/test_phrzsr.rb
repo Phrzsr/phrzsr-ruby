@@ -4,7 +4,7 @@ require 'phrzsr'
 class PhrzsrTest < Test::Unit::TestCase
 
   def setup
-    @@motivational_url = 'https://github.com/Phrzsr/phrzsr/blob/master/motivational'
+    @@motivational_url = 'https://raw.github.com/Phrzsr/phrzsr/master/motivational'
   end
 
   def test_phrzsr_is_string
@@ -44,4 +44,5 @@ class PhrzsrTest < Test::Unit::TestCase
   def test_phrzsr_with_category_and_substition_is_string
     assert_equal String, Phrzsr.phrzsr(:motivational, ['Ricky']).class
   end
+
 end

@@ -12,18 +12,18 @@ class Phrzsr
       category = category_or_url.to_sym
       url = github_url(category)
     end
-    puts phrase_from_url(url)
-    " "
+    phrase_from_url(url)
   end
 
   private
 
-  def phrase_from_url(url)
+  def self.phrase_from_url(url)
     text = Net::HTTP.get(URI.parse(url))
-    possible_phrases = text.split('\n')
+    possible_phrases = text.split("\n")
+    possible_phrases.sample
   end
 
-  def github_url(category)
+  def self.github_url(category)
     "https://raw.github.com/Phrzsr/phrzsr/master/#{category.to_s}"
   end
 
